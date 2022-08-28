@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <title>Apresentação JS</title>
 
+<script src='./files/jquery.min.js'></script>
+<script  src="./files/jquery.fittext.js"></script>
+<script src='./files/anime.min.js'></script>
+<script src='./files/bootstrap.min.js'></script>
+<script  src="./files/script.js"></script>
+
 <link rel='stylesheet' href='./files/bootstrap.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
 <link rel="stylesheet" href="./files/style.css">
@@ -17,19 +23,26 @@
 </div>
 <div class="container">
     <div class="card">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
             </ol>
+
             <div class="carousel-inner">
                 
                 <div class="carousel-item active">                    
                     <div class="row h-100 align-items-center">
                         <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
                         <div class="title">                            
-                            <h3>O que é JavaScript?</h3>
+                            <h4>1</h4><h3>O que é JavaScript?</h3>
                         </div>
                         <div class="content">
                             <p>•É uma linguagem de programação de uso geral para desenvolvimento web e de software. Focado principalmente na parte de “Front-end” (parte visual da aplicação), é utilizado junto a outras duas linguagens, HTML e CSS. 
@@ -45,13 +58,13 @@
                     <div class="row h-100 align-items-center">
                         <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
                         <div class="title">                            
-                            <h3>Exemplos de Aplicações em JS</h3>
+                            <h4>2</h4><h3>Exemplos de Aplicações em JS</h3>
                         </div>
                         <div class="content">
                             <p class="center">Exemplo de estrutura:</p>
                             <img src="./files/img/img2.png" /><img src="./files/img/img3.png" />
                             <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
-                            <br><p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
+                            <p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +73,7 @@
                     <div class="row h-100 align-items-center">
                         <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
                         <div class="title">                            
-                            <h3>Bibliotecas e Frameworks</h3>
+                            <h4>3</h4><h3>Bibliotecas e Frameworks</h3>
                         </div>
                         <div class="content">
                             <p>As <b>bibliotecas</b> são um conjunto de funções prontas com objetivo de facilitar e acelerar o desenvolvimento, mantendo o controle do fluxo.</p>
@@ -74,8 +87,93 @@
                     </div>
                 </div>
 
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h4>4</h4><h3>A importância do JavaScript</h3>
+                        </div>
+                        <div class="content">
 
-<!--                 <div class="carousel-item">                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h4>5</h4><h3>Por onde aprender?</h3>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h4>6</h4><h3>Por que aprender?</h3>
+                        </div>
+                        <div class="content">
+                        <h2 style="font-size: 3.1vh;">1 - Linguagem muito popular</h2>
+                            <p style="font-size: 2.2vh;">Bastante recomendada para quem deseja iniciar no mundo da programação, pois é fácil de entender quando comparada com outras como o Java, por exemplo.</p>
+                        <h2 style="font-size: 3.1vh;">2 - Sintaxe simples</h2>
+                            <p style="font-size: 2.2vh;">Uma das características que faz o JavaScript ser bastante utilizado no mercado é a facilidade para entender e utilizar, pois possui uma sintaxe muito amigável.</p>
+                        <h2 style="font-size: 3.1vh;">3 - Usado no Back-End e no Front-End</h2>
+                            <p style="font-size: 2.2vh;">Uma das grandes vantagens de utilizar o JavaScript é que você usa a mesma linguagem tanto no Front-End quanto no Back-End.</p>
+                        <h2 style="font-size: 3.1vh;">4 - Versatilidade</h2>
+                            <p style="font-size: 2.2vh;">•Desenvolvimento Web<br>•Desenvolvimento Mobile<br>•Desenvolvimento de Jogos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h4>7</h4><h3>Empresas que utilizam JavaScript</h3>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h4>8</h4><h3>Mercado de trabalho</h3>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">                        
+                        <div class="content col-12 center">
+                            <h2 style="font-size: 7vh;">Obrigado!</h2>
+                            <br>
+                            <h3 style="font-size: 4.8vh;">Participantes:</h3>                        
+                            <p style="font-size: 3.4vh;">•Bernardo</p>
+                            <p style="font-size: 3.4vh;">•Gabriel</p>
+                            <p style="font-size: 3.4vh;">•Glabson</p>
+                            <p style="font-size: 3.4vh;">•Gustavo</p>
+                            <p style="font-size: 3.4vh;">•Igor</p>
+                            <p style="font-size: 3.4vh;">•João</p>
+                            <p style="font-size: 3.4vh;">•Luiz</p>
+                            <p style="font-size: 3.4vh;">•Pedro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="carousel-item">                    
                     <div class="row h-100 align-items-center">
                         <div class="bgTitle" style="width: 34%;">
                             <div class="background" style="background-image: url(./img/img1.jpg);"><div class="filter"></div></div>                            
@@ -110,23 +208,16 @@
                             <img src="./img/frameworks.png" height="96px"/>
                         </div>
                     </div>
-                </div>
- -->
+                </div>-->
             </div>
         </div>
     </div>
     <button class="btn btn-prev"><i class="arrow up"></i></button>
     <button class="btn btn-next"><i class="arrow down"></i></button>
 </div>
-<!-- partial -->
-<script src='./files/jquery.min.js'></script>
-<script src='./files/anime.min.js'></script>
-<script src='./files/bootstrap.min.js'></script>
-<script  src="./files/script.js"></script>
-<script  src="./files/jquery.fittext.js"></script>
 <script>
     function FitContentText(){
-        $(".content").fitText(1.0, { maxFontSize: '26px' });
+        //$(".content").fitText(1.0, { maxFontSize: '26px' });
     }
     window.onresize = function(event) {
         FitContentText();
