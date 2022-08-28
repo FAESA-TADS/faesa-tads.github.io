@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt" >
+<head>
+<meta charset="UTF-8">
+<title>Apresentação JS</title>
+
+<link rel='stylesheet' href='./files/bootstrap.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+<link rel="stylesheet" href="./files/style.css">
+
+</head>
+<body>
+<div class="body-background"></div>
+<!-- partial:index.partial.html -->
+<div class="mainTitle">
+    <h1>Apresentação JavaScript</h1>
+</div>
+<div class="container">
+    <div class="card">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h3>O que é JavaScript?</h3>
+                        </div>
+                        <div class="content">
+                            <p>•É uma linguagem de programação de uso geral para desenvolvimento web e de software. Focado principalmente na parte de “Front-end” (parte visual da aplicação), é utilizado junto a outras duas linguagens, HTML e CSS. 
+                            </p><br><p>•Ainda assim pode ser utilizada com muito versatilidade tendo em vista que pode ser vista em back-ends para processamentos de informações num banco de dados, por exemplo.
+                            </p><br><p>•Teve seu surgimento na década de 90’, se embalando no estouro que estava sendo o Java na época (apesar das duas linguagens não serem a mesma coisa), sendo criada através de uma jogada de marketing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h3>Exemplos de Aplicações em JS</h3>
+                        </div>
+                        <div class="content">
+                            <p class="center">Exemplo de estrutura:</p>
+                            <img src="./files/img/img2.png" /><img src="./files/img/img3.png" />
+                            <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
+                            <br><p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle"><div class="title-background" style="background-image: url(./files/img/img1.blur.jpg);"></div></div>
+                        <div class="title">                            
+                            <h3>Bibliotecas e Frameworks</h3>
+                        </div>
+                        <div class="content">
+                            <p>As <b>bibliotecas</b> são um conjunto de funções prontas com objetivo de facilitar e acelerar o desenvolvimento, mantendo o controle do fluxo.</p>
+                            <p class="center small">Exemplo: jQuery, React e Moment.</p>
+                            <img src="./files/img/libs.png" height="96px"/>
+                            <br>
+                            <p>Os <b>frameworks</b> são estruturas mais completas que modulam o processo de desenvolvimento.</p>
+                            <p class="center small">Exemplos: Angular, Bootstrap e Vue.</p>
+                            <img src="./files/img/frameworks.png" height="96px"/>
+                        </div>
+                    </div>
+                </div>
+
+
+<!--                 <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle" style="width: 34%;">
+                            <div class="background" style="background-image: url(./img/img1.jpg);"><div class="filter"></div></div>                            
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-center align-items-center title" >                        
+                            <h3>Exemplos de Aplicações em JS</h3>
+                        </div>
+                        <div class="col-lg-8 content">
+                            <p class="center">Exemplo de estrutura:</p>
+                            <img src="./img/img2.png" /><img src="./img/img3.png" />
+                            <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
+                            <br><p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">                    
+                    <div class="row h-100 align-items-center">
+                        <div class="bgTitle" style="width: 34%;">
+                            <div class="background" style="background-image: url(./img/img1.jpg);"><div class="filter"></div></div>                            
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-center align-items-center title" >                        
+                            <h3>Bibliotecas e Frameworks</h3>
+                        </div>
+                        <div class="col-lg-8 content">
+                            <p>As <b>bibliotecas</b> são um conjunto de funções prontas com objetivo de facilitar e acelerar o desenvolvimento, mantendo o controle do fluxo.</p>
+                            <p class="center small">Exemplo: jQuery, React e Moment.</p>
+                            <img src="./img/libs.png" height="96px"/>
+                            <br>
+                            <p>Os <b>frameworks</b> são estruturas mais completas que modulam o processo de desenvolvimento.</p>
+                            <p class="center small">Exemplos: Angular, Bootstrap e Vue.</p>
+                            <img src="./img/frameworks.png" height="96px"/>
+                        </div>
+                    </div>
+                </div>
+ -->
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-prev"><i class="arrow up"></i></button>
+    <button class="btn btn-next"><i class="arrow down"></i></button>
+</div>
+<!-- partial -->
+<script src='./files/jquery.min.js'></script>
+<script src='./files/anime.min.js'></script>
+<script src='./files/bootstrap.min.js'></script>
+<script  src="./files/script.js"></script>
+<script  src="./files/jquery.fittext.js"></script>
+<script>
+    function FitContentText(){
+        $(".content").fitText(1.0, { maxFontSize: '26px' });
+    }
+    window.onresize = function(event) {
+        FitContentText();
+    };
+    FitContentText();
+</script>
+</body>
+</html>
