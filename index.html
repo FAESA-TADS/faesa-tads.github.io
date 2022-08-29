@@ -62,7 +62,7 @@
                         </div>
                         <div class="content">
                             <p class="center">Exemplo de estrutura:</p>
-                            <img src="./files/img/img2.png" /><img src="./files/img/img3.png" />
+                            <img src="./files/img/img2.png" height="200"/><img src="./files/img/img3.png" height="120"/>
                             <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
                             <p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
                         </div>
@@ -216,13 +216,68 @@
     <button class="btn btn-next"><i class="arrow down"></i></button>
 </div>
 <script>
+    var textScale = [1, 1, 1, 1, 1, 1, 1, 1];
+    var textScaleCount = 0;
+    var pFontSize = 2.5; //vh
+    var h2FontSize = 3.6; //vh
+    var fontMeasure = "vh";
+
+    function ScaleText(increase){
+        textScaleCount = $("ol.carousel-indicators li.active").attr("data-slide-to");
+
+        if(increase){
+            if(textScale[textScaleCount] < 2)
+                textScale[textScaleCount] += 0.05;
+            else return;
+
+            if(textScale[textScaleCount] < 1){
+                $('.active .content img').each(function(){
+                    $(this).height($(this).height() / 0.95);
+                });
+            }
+            else {
+                $('.active .content img').each(function(){
+                    $(this).height($(this).height() * 1.05);
+                });
+            }  
+        }
+        else{
+            if(textScale[textScaleCount] > 0.5)
+                textScale[textScaleCount] -= 0.05;
+            else return;
+
+            if(textScale[textScaleCount] > 1){
+                $('.active .content img').each(function(){
+                    $(this).height($(this).height() / 1.05);
+                });
+            }
+            else {
+                $('.active .content img').each(function(){
+                    $(this).height($(this).height() * 0.95);
+                });
+            }
+        }
+
+        $(".active .content p").css("font-size", (textScale[textScaleCount]*pFontSize) + fontMeasure);
+        $(".active .content h2").css("font-size", (textScale[textScaleCount]*h2FontSize) + fontMeasure);
+    }
+
+
+    function NextText(){
+        $('.carousel').carousel('next');
+    }
+
+    function PreviousText(){
+        $('.carousel').carousel('prev');
+    }
+    
+    
     function FitContentText(){
         //$(".content").fitText(1.0, { maxFontSize: '26px' });
     }
     window.onresize = function(event) {
-        FitContentText();
+        //FitContentText();
     };
-    FitContentText();
 </script>
 </body>
 </html>

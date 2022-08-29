@@ -3,13 +3,11 @@ $('.carousel').carousel({
 });
 
 $('.btn-next').click(function(){
-  $('.carousel').carousel('next');
-  FitContentText();
+  NextText();
 });
 
 $('.btn-prev').click(function(){
-  $('.carousel').carousel('prev');
-  FitContentText();
+  PreviousText();
 });
 
 document.onkeydown = checkKey;
@@ -20,20 +18,20 @@ function checkKey(e) {
 
     if (e.keyCode == '38') {
         // up arrow
-        $('.carousel').carousel('prev');
+        ScaleText(true);
     }
     else if (e.keyCode == '40') {
         // down arrow
-        $('.carousel').carousel('next');
+        ScaleText(false);
     }
     else if (e.keyCode == '37') {
-       // left arrow
-       $('.carousel').carousel('prev');
+       // left arrow       
+       PreviousText();
     }
     else if (e.keyCode == '39') {
-       // right arrow
-       $('.carousel').carousel('next');
+       // right arrow       
+       NextText();
     }
 
-    FitContentText();
+    //FitContentText();
 }
