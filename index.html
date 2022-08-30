@@ -294,6 +294,10 @@
         var count = 0;
         await delay(1000);
 
+        await ScaleDown();
+        await ScaleUp();
+        await ScaleDown();
+        /*
         while(await (ContentActualProportion() > 0.85 && count < 30)){
             ScaleText(false);
             await delay(50);
@@ -310,12 +314,32 @@
             ScaleText(false);
             await delay(50);
             count++;
-        }        
+        } 
+        */       
+    }
+
+    async function ScaleDown(){
+        var count = 0;
+        while(await (ContentActualProportion() > 0.85 && count < 40)){
+            ScaleText(false);
+            await delay(50);
+            count++;
+        }
+        return true;
+    }
+
+    async function ScaleUp(){
+        var count = 0;
+        while(await (ContentActualProportion() < 0.85 && count < 40)){
+            ScaleText(true);
+            await delay(50);
+            count++;
+        }
+        return true;        
     }
 
     function ContentActualProportion(){
         //console.log($(".active .content").height() / $(".carousel-inner").height());
-        console.log($(".active .content p").css("font-size"));
         return $(".active .content").height() / $(".carousel-inner").height();
     }
 

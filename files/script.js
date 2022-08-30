@@ -34,6 +34,10 @@ function checkKey(e) {
        // right arrow       
        NextText();
     }
+    else if (e.keyCode == '82') {
+      // R     
+      ContentAutoFit();      
+   }
 
     //FitContentText();
 }
