@@ -61,7 +61,7 @@
                         </div>
                         <div class="content">
                             <p class="center">Exemplo de estrutura:</p>
-                            <img src="./files/img/img2.png" height="200"/><img src="./files/img/img3.png" height="120"/>
+                            <img src="./files/img/img2.png" height="200"/>
                             <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
                             <p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
                         </div>
@@ -113,7 +113,8 @@
                             <h4>5</h4><h3>Por onde aprender?</h3>
                         </div>
                         <div class="content">
-
+                            <p>Uma das vantagens de <b>aprender JavaScript</b> é a sua popularidade. A linguagem está entre as mais utilizadas da atualidade. Existem diversas formas de se buscar esse conhecimento, por meio de livros, comunidades na internet ou por meio de plataformas de cursos online, abaixo estão algumas opções:</p>
+                            <p class="center"><b>•Udemy</b><br><b>•Alura</b></p>
                         </div>
                     </div>
                 </div>
@@ -293,28 +294,34 @@
         var count = 0;
         await delay(1000);
 
-        while(await (ContentActualProportion() > 0.85 && count < 25)){
+        while(await (ContentActualProportion() > 0.85 && count < 30)){
             ScaleText(false);
             await delay(50);
             count++;
         }
         count = 0;
-        while(await (ContentActualProportion() < 0.85 && count < 25)){
+        while(await (ContentActualProportion() < 0.85 && count < 30)){
             ScaleText(true);
             await delay(50);
             count++;
         }
         count = 0;
-        while(await (ContentActualProportion() > 0.85 && count < 25)){
+        while(await (ContentActualProportion() > 0.85 && count < 30)){
             ScaleText(false);
             await delay(50);
             count++;
-        }
+        }        
     }
 
     function ContentActualProportion(){
         //console.log($(".active .content").height() / $(".carousel-inner").height());
+        console.log($(".active .content p").css("font-size"));
         return $(".active .content").height() / $(".carousel-inner").height();
+    }
+
+    function ContentFontSize(){
+        console.log($(".active .content p").css("font-size"));
+        return $(".active .content p").css("font-size");
     }
     
     window.onresize = function(event) {
