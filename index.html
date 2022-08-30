@@ -8,7 +8,6 @@
 <script  src="./files/jquery.fittext.js"></script>
 <script src='./files/anime.min.js'></script>
 <script src='./files/bootstrap.min.js'></script>
-<script  src="./files/script.js"></script>
 
 <link rel='stylesheet' href='./files/bootstrap.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
@@ -94,7 +93,15 @@
                             <h4>4</h4><h3>A importância do JavaScript</h3>
                         </div>
                         <div class="content">
-
+                            <p>•Primeiramente, o JavaScript é uma linguagem de programação que permite a implementação de elementos complexos e dinâmicos em páginas da internet.
+                            </p>
+                            <br>
+                            <p>•Por meio dele, é possível manipular, calcular e validar informações, além de atualizar e aperfeiçoar códigos feitos em HTML e CSS.
+                            </p>
+                            <br>
+                            <p>•Além disso, o JavaScript existe há mais de 20 anos e está há mais de oito anos sendo a linguagem de programação mais comum entre pessoas desenvolvedoras do mundo todo.
+                            </p>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -137,7 +144,14 @@
                             <h4>7</h4><h3>Empresas que utilizam JavaScript</h3>
                         </div>
                         <div class="content">
-
+                            <p>Hoje, estima-se que a maior parte da web tenha sido construída em Javascript. Alguns sites que utilizam a tecnologia:
+                            </p>
+                            <br>
+                            <ul>
+                                <li><p><b>Google:</b> Boa parte das interações do Google é em Javascript. Um exemplo disso é a ferramenta de autocompletar da barra de pesquisa; outro é a rolagem infinita da pesquisa de imagens;<p></li>
+                                <li><p><b>Twitter:</b> A rolagem infinita da timeline é em JS, bem como a divisão do site em colunas.</p></li>
+                                <li><p><b>Netflix:</b> A reprodução automática de partes de um filme/série quando posicionamos o mouse sobre a miniatura é JS.</p></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -157,17 +171,17 @@
                 <div class="carousel-item">                    
                     <div class="row h-100 align-items-center">                        
                         <div class="content col-12 center">
-                            <h2 style="font-size: 7vh;">Obrigado!</h2>
+                            <h2 style="font-size: 6vh;">Obrigado!</h2>
                             <br>
-                            <h3 style="font-size: 4.8vh;">Participantes:</h3>                        
-                            <p style="font-size: 3.4vh;">•Bernardo</p>
-                            <p style="font-size: 3.4vh;">•Gabriel</p>
-                            <p style="font-size: 3.4vh;">•Glabson</p>
-                            <p style="font-size: 3.4vh;">•Gustavo</p>
-                            <p style="font-size: 3.4vh;">•Igor</p>
-                            <p style="font-size: 3.4vh;">•João</p>
-                            <p style="font-size: 3.4vh;">•Luiz</p>
-                            <p style="font-size: 3.4vh;">•Pedro</p>
+                            <h3 style="font-size: 4.2vh;">Participantes:</h3>                        
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Bernardo</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Gabriel</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Glabson</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Gustavo</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Igor</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•João</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Luiz</span><br>
+                            <span style="font-size: 3.2vh; font-weight: 800;">•Pedro</span>
                             </div>
                         </div>
                     </div>
@@ -211,10 +225,12 @@
                 </div>-->
             </div>
         </div>
+        <button class="btn btn-prev"><i class="arrow up"></i></button>
+        <button class="btn btn-next"><i class="arrow down"></i></button>
     </div>
-    <button class="btn btn-prev"><i class="arrow up"></i></button>
-    <button class="btn btn-next"><i class="arrow down"></i></button>
+
 </div>
+<script  src="./files/script.js"></script>
 <script>
     var textScale = [1, 1, 1, 1, 1, 1, 1, 1];
     var textScaleCount = 0;
@@ -227,33 +243,33 @@
 
         if(increase){
             if(textScale[textScaleCount] < 2)
-                textScale[textScaleCount] += 0.05;
+                textScale[textScaleCount] += 0.02;
             else return;
 
             if(textScale[textScaleCount] < 1){
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() / 0.95);
+                    $(this).height($(this).height() / 0.98);
                 });
             }
             else {
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() * 1.05);
+                    $(this).height($(this).height() * 1.02);
                 });
             }  
         }
         else{
             if(textScale[textScaleCount] > 0.5)
-                textScale[textScaleCount] -= 0.05;
+                textScale[textScaleCount] -= 0.02;
             else return;
 
             if(textScale[textScaleCount] > 1){
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() / 1.05);
+                    $(this).height($(this).height() / 1.02);
                 });
             }
             else {
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() * 0.95);
+                    $(this).height($(this).height() * 0.98);
                 });
             }
         }
@@ -265,18 +281,47 @@
 
     function NextText(){
         $('.carousel').carousel('next');
+        ContentAutoFit();
     }
 
     function PreviousText(){
         $('.carousel').carousel('prev');
+        ContentAutoFit();
     }
     
-    
-    function FitContentText(){
-        //$(".content").fitText(1.0, { maxFontSize: '26px' });
+    async function ContentAutoFit(){
+        var count = 0;
+        await delay(1000);
+
+        while(await (ContentActualProportion() > 0.85 && count < 25)){
+            ScaleText(false);
+            await delay(50);
+            count++;
+        }
+        count = 0;
+        while(await (ContentActualProportion() < 0.85 && count < 25)){
+            ScaleText(true);
+            await delay(50);
+            count++;
+        }
+        count = 0;
+        while(await (ContentActualProportion() > 0.85 && count < 25)){
+            ScaleText(false);
+            await delay(50);
+            count++;
+        }
     }
+
+    function ContentActualProportion(){
+        //console.log($(".active .content").height() / $(".carousel-inner").height());
+        return $(".active .content").height() / $(".carousel-inner").height();
+    }
+    
     window.onresize = function(event) {
-        //FitContentText();
+        ContentAutoFit();
+    };
+    window.onload = function(event) {
+        ContentAutoFit();
     };
 </script>
 </body>
