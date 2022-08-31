@@ -61,7 +61,7 @@
                         </div>
                         <div class="content">
                             <p class="center">Exemplo de estrutura:</p>
-                            <img src="./files/img/img2.png" height="200"/>
+                            <img src="./files/img/img2.png" height="170"/>
                             <br><p>•O código em JavaScript pode ser inserido tanto no próprio arquivo HTML quanto em um arquivo externo.</p>
                             <p>•Algumas aplicações que foram feitas com JS são: Facebook, Youtube, Google e Wikipedia.</p>
                         </div>
@@ -164,7 +164,9 @@
                             <h4>8</h4><h3>Mercado de trabalho</h3>
                         </div>
                         <div class="content">
-
+                            <img src="./files/img/img3.png" height="250"/>
+                            <p>•O JavaScript é uma das linguagens que mais ganhou destaque nos últimos anos.</p>
+                            <p>•A popularização de seu uso em aplicações back-end e o aumento na demanda por aplicações SPA (Single Page Application) através de frameworks como o Angular e o React fez com que o JavaScript desse um salto de popularidade e em soluções computacionais de variados níveis de complexidade e se tornou tão popular.</p>
                         </div>
                     </div>
                 </div>
@@ -249,12 +251,14 @@
 
             if(textScale[textScaleCount] < 1){
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() / 0.98);
+                    if($(this).width() < $(".active .content").width())
+                        $(this).height($(this).height() / 0.98);
                 });
             }
             else {
                 $('.active .content img').each(function(){
-                    $(this).height($(this).height() * 1.02);
+                    if($(this).width() < $(".active .content").width())
+                        $(this).height($(this).height() * 1.02);
                 });
             }  
         }
@@ -279,20 +283,35 @@
         $(".active .content h2").css("font-size", (textScale[textScaleCount]*h2FontSize) + fontMeasure);
     }
 
-
-    function NextText(){
-        $('.carousel').carousel('next');
-        ContentAutoFit();
+    function IncreaseImage(increase){
+        $('.active .content img').each(function(){
+            if(increase)
+                $(this).height($(this).height() * 1.02);
+            else
+                $(this).height($(this).height() * 0.98);
+        });
     }
 
-    function PreviousText(){
+    async function NextText(){
+        ContentAutoFit(true);
+        await delay(50);
+        $('.carousel').carousel('next');
+    }
+
+    async function PreviousText(){
+        ContentAutoFit(true);
+        await delay(50);
         $('.carousel').carousel('prev');
-        ContentAutoFit();
     }
     
-    async function ContentAutoFit(){
-        var count = 0;
-        await delay(1000);
+    async function ContentAutoFit(waitSlideChange){
+        //var count = 0;
+
+/*         if(waitSlideChange){
+            await SlideChange();
+        } */
+
+        await delay(900);
 
         await ScaleDown();
         await ScaleUp();
@@ -338,6 +357,14 @@
         return true;        
     }
 
+    async function SlideChange(){
+        var actualSlide = $("ol.carousel-indicators li.active").attr("data-slide-to");
+        while ($("ol.carousel-indicators li.active").attr("data-slide-to") == actualSlide){
+            await delay(100);
+        }
+        return true;
+    }
+
     function ContentActualProportion(){
         //console.log($(".active .content").height() / $(".carousel-inner").height());
         return $(".active .content").height() / $(".carousel-inner").height();
@@ -349,10 +376,10 @@
     }
     
     window.onresize = function(event) {
-        ContentAutoFit();
+        ContentAutoFit(false);
     };
     window.onload = function(event) {
-        ContentAutoFit();
+        ContentAutoFit(false);
     };
 </script>
 </body>

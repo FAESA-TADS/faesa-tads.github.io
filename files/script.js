@@ -36,8 +36,16 @@ function checkKey(e) {
     }
     else if (e.keyCode == '82') {
       // R     
-      ContentAutoFit();      
-   }
+      ContentAutoFit(false);      
+    }    
+    else if (e.keyCode == '50') {
+      // 2    
+      IncreaseImage(true);    
+    }
+    else if (e.keyCode == '49') {
+      // 1 
+      IncreaseImage(false);    
+    }
 
     //FitContentText();
 }
